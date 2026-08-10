@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>สารวันแม่แห่งชาติ — บทคารวะและของขวัญอันทรงเกียรติแด่คุณแม่ 🌸</title>
-<meta name="description" content="ร่วมถ่ายทอดความรัก ความเคารพ และคำอวยพรอันทรงเกียรติเนื่องในโอกาสวันแม่แห่งชาติ 💐">
+<title>สุขสันต์วันแม่ 🌸 ถึงแม่คนสวยของหนู/ผม</title>
+<meta name="description" content="การ์ดวันแม่เล็กๆ ที่อยากบอกแม่ว่ารักแม่มากแค่ไหน 💐">
 
 <!-- Open Graph / Decoy Social Share Preview -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="สารวันแม่แห่งชาติ — บทคารวะและของขวัญอันทรงเกียรติแด่คุณแม่ 🌸">
-<meta property="og:description" content="ขอเชิญร่วมถวายความเคารพและส่งต่อคำอวยพรอันอบอุ่นใจ เพื่อคนสำคัญยิ่งในชีวิต">
+<meta property="og:title" content="สุขสันต์วันแม่ 🌸 ถึงแม่คนสวยของหนู/ผม">
+<meta property="og:description" content="การ์ดเล็กๆ ที่อยากบอกแม่ว่ารักแม่มากแค่ไหน">
 <meta property="og:image" content="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=1000&auto=format&fit=crop">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="สารวันแม่แห่งชาติ — บทคารวะและของขวัญอันทรงเกียรติแด่คุณแม่ 🌸">
+<meta name="twitter:title" content="สุขสันต์วันแม่ 🌸 ถึงแม่คนสวยของหนู/ผม">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,6 @@
   .script { font-family: 'Dancing Script', cursive; }
   .handwriting { font-family: 'Sriracha', cursive; }
 
-  /* Background Sunbeam & Jasmine Glow */
   .bg-glow {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background:
@@ -64,7 +63,6 @@
 
   section { position: relative; z-index: 1; }
 
-  /* Jasmine Petals Floating */
   .petals-container {
     position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden;
   }
@@ -91,7 +89,6 @@
     50% { margin-left: 28px; }
   }
 
-  /* Audio Control Floating Badge */
   .audio-control {
     position: fixed; top: 22px; right: 22px; z-index: 100;
     display: flex; align-items: center; gap: 10px;
@@ -117,7 +114,6 @@
   .audio-btn:hover { transform: scale(1.08); }
   .audio-label { font-size: 13px; font-weight: 400; color: var(--text-secondary); letter-spacing: 0.05em; }
 
-  /* FORMAL HERO SECTION */
   .hero-wrap {
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -157,7 +153,6 @@
   .gold-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent); }
   .gold-diamond { font-size: 12px; color: var(--gold-primary); }
 
-  /* FORMAL CARD / SCROLL */
   .scroll-card {
     background: var(--bg-card);
     border: 1px solid var(--border-gold);
@@ -182,7 +177,6 @@
     color: var(--gold-dark); font-weight: 500;
   }
 
-  /* POEM SECTION (กลอนวันแม่) */
   .poem-box {
     background: var(--bg-accent);
     border-left: 3px solid var(--gold-primary);
@@ -195,7 +189,6 @@
     color: var(--rose-accent); line-height: 2.2;
   }
 
-  /* HONORARY FEATURE GRID */
   .feature-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px; width: 100%; max-width: 760px; margin: 40px auto 0;
@@ -215,7 +208,6 @@
   .feature-title { font-size: 19px; font-weight: 500; color: var(--gold-dark); margin-bottom: 8px; }
   .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-  /* INTERACTIVE JASMINE GARLAND OFFERING */
   .interactive-garland {
     margin: 45px 0 20px; display: flex; flex-direction: column; align-items: center; gap: 16px;
   }
@@ -237,7 +229,6 @@
     font-size: 14px; color: var(--text-secondary); letter-spacing: 0.05em;
   }
 
-  /* SIGNATURE & CLOSING */
   .closing-wrap {
     padding: 80px 24px 100px; text-align: center;
   }
@@ -275,19 +266,19 @@
   <button class="audio-btn" id="audioBtn" onclick="toggleAudio()" aria-label="Play Music">
     <span id="audioIcon">🌸</span>
   </button>
-  <span class="audio-label" id="audioStatus">เปิดเพลงบรรเลงวันแม่</span>
+  <span class="audio-label" id="audioStatus">เปิดเพลงเบาๆ ฟังกัน</span>
 </div>
 
 <audio id="bgMusic" loop preload="auto">
   <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8716b3f.mp3?filename=gentle-piano-10708.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HERO SECTION: Formal Tribute -->
+<!-- HERO SECTION -->
 <div class="hero-wrap">
   <div class="jasmine-emblem">🌸</div>
-  <p class="eyebrow-formal">12 AUGUST — MOTHER'S DAY TRIBUTE</p>
-  <h1 class="hero-title">สารเนื่องในวันแม่แห่งชาติ</h1>
-  <h2 class="hero-subtitle">กิตติกรรมประกาศและบทคารวะอันทรงเกียรติแด่คุณแม่</h2>
+  <p class="eyebrow-formal">12 สิงหาคม • วันแม่แห่งชาติ</p>
+  <h1 class="hero-title">สุขสันต์วันแม่นะแม่</h1>
+  <h2 class="hero-subtitle">ขอบคุณที่เป็นแม่ของหนู/ผมนะ 💛</h2>
 
   <div class="gold-divider">
     <div class="gold-line"></div>
@@ -297,7 +288,7 @@
 
   <div class="scroll-card" data-reveal-el>
     <p>
-      เนื่องในโอกาสอันเป็นมงคลยิ่งแห่ง <span class="highlight-gold">วันแม่แห่งชาติ</span> ขอนอบน้อมคารวะและแสดงความซาบซึ้งในพระคุณอันยิ่งใหญ่ของคุณแม่ ผู้เป็นประธานแห่งความรัก ความเมตตา และเป็นเสาหลักอันมั่นคงของครอบครัวเสมอมา
+      วันนี้อยากหยุดสักครู่แล้วบอกแม่ตรงๆ ว่า<span class="highlight-gold">รักแม่มากแค่ไหน</span> บางทีเราก็ไม่ค่อยได้พูดคำนี้กันบ่อยๆ ในชีวิตประจำวัน แต่จริงๆ แล้วมันอยู่ในใจตลอดเวลา
     </p>
 
     <div class="poem-box">
@@ -310,59 +301,59 @@
     </div>
 
     <p>
-      ไม่มีความรักใดในโลกนี้ที่จะบริสุทธิ์และยิ่งใหญ่ไปกว่าความรักของคุณแม่ ทุกความเสียสละ คำสั่งสอน และความอารีที่คุณแม่มอบให้ เป็นรากฐานอันสำคัญยิ่งที่นำทางให้พวกเราเติบโตอย่างมั่นคงและมีความสุข
+      ขอบคุณที่คอยอยู่เคียงข้างมาตลอด ไม่ว่าจะเรื่องเล็กเรื่องใหญ่ ขอบคุณที่เข้าใจ ที่ให้อภัย และที่รักเราแบบไม่มีเงื่อนไข ถ้าไม่มีแม่ วันนี้หนู/ผมคงไม่เป็นแบบนี้
     </p>
     <p>
-      ในโอกาสนี้ ขอกราบอาราธนาคุณพระศรีรัตนตรัยและสิ่งศักดิ์สิทธิ์ทั้งหลาย ได้โปรดดลบันดาลประทานพรให้คุณแม่ประสบแต่ความสุข ความเจริญ มีสุขภาพพลานามัยที่แข็งแรง สมบูรณ์ ปราศจากโรคภัยไข้เจ็บ และมีความสุขตราบกาลนาน 💐
+      ขอให้แม่มีความสุขมากๆ นะ สุขภาพแข็งแรง ไม่เจ็บไม่ป่วย แล้วก็อยากให้แม่รู้ไว้ว่าไม่ว่ายังไงก็มีหนู/ผมอยู่ตรงนี้เสมอ 💐
     </p>
   </div>
 </div>
 
-<!-- SECTION 2: 3 Pillars of Gratitude -->
+<!-- SECTION 2 -->
 <section style="padding: 40px 24px; max-width: 800px; margin: 0 auto; text-align: center;">
   <div data-reveal-el>
-    <p class="eyebrow-formal">THE VALUE OF MATERNAL LOVE</p>
+    <p class="eyebrow-formal">สิ่งที่แม่ให้เรามาตลอด</p>
     <h2 class="display" style="font-size: clamp(26px, 4.5vw, 40px); color: var(--text-primary);">
-      คุณค่าอันหาที่สุดมิได้
+      สามอย่างที่ลืมไม่ลง
     </h2>
   </div>
 
   <div class="feature-grid" data-reveal-el>
     <div class="feature-item">
       <span class="feature-icon">💐</span>
-      <h3 class="feature-title">ดอกมะลิแทนใจ</h3>
-      <p class="feature-desc">สัญลักษณ์แห่งความบริสุทธิ์ ส่งกลิ่นหอมเย็นบริสุทธิ์ดุจความรักของคุณแม่</p>
+      <h3 class="feature-title">ความรักที่ไม่มีวันหมด</h3>
+      <p class="feature-desc">ไม่ว่าจะทำอะไรผิดพลาดแค่ไหน แม่ก็ยังรักและให้อภัยเสมอ</p>
     </div>
 
     <div class="feature-item">
       <span class="feature-icon">🛡️</span>
-      <h3 class="feature-title">เกราะปกป้องอันอบอุ่น</h3>
-      <p class="feature-desc">คอยดูแลและโอบอุ้มด้วยความรัก ความอดทน ในทุกช่วงเวลาของชีวิต</p>
+      <h3 class="feature-title">ที่พึ่งเวลาเหนื่อย</h3>
+      <p class="feature-desc">ทุกครั้งที่ท้อ กลับบ้านไปหาแม่แล้วรู้สึกดีขึ้นเสมอ</p>
     </div>
 
     <div class="feature-item">
       <span class="feature-icon">🕯️</span>
-      <h3 class="feature-title">ประทีปส่องนำทาง</h3>
-      <p class="feature-desc">คอยสั่งสอน ให้ข้อคิด และเป็นแบบอย่างที่ดีในการดำเนินชีวิตอย่างมีคุณค่า</p>
+      <h3 class="feature-title">แบบอย่างที่ดี</h3>
+      <p class="feature-desc">สอนให้เรารู้ว่าอะไรถูกอะไรผิด และเป็นคนที่ดีขึ้นทุกวัน</p>
     </div>
   </div>
 
   <!-- Interactive Garland Offering -->
   <div class="interactive-garland" data-reveal-el>
     <button class="garland-btn" id="garlandBtn" onclick="offerGarland()">
-      <span>💐</span> กราบนอบน้อมมอบพวงมาลัยวันแม่
+      <span>💐</span> กดส่งความรักให้แม่
     </button>
-    <div class="garland-count" id="garlandCount">ร่วมมอบพวงมาลัยแล้ว <span id="garlandNum" style="color: var(--gold-dark); font-weight: 600;">0</span> ครั้ง</div>
+    <div class="garland-count" id="garlandCount">ส่งความรักไปแล้ว <span id="garlandNum" style="color: var(--gold-dark); font-weight: 600;">0</span> ครั้ง</div>
   </div>
 </section>
 
 <!-- SECTION 3: Signature & Closing -->
 <section class="closing-wrap">
   <div data-reveal-el>
-    <p class="formal-salutation">ด้วยความกตัญญูกตเวทิตาและเคารพรักอย่างสูงยิ่ง,</p>
-    <h3 class="formal-signature">ด้วยรักและเคารพคุณแม่</h3>
+    <p class="formal-salutation">รักแม่ที่สุดในโลกเลยนะ</p>
+    <h3 class="formal-signature">ลูกของแม่</h3>
     <div style="width: 160px; height: 2px; margin: 24px auto 0; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);"></div>
-    <p class="footer-copyright">MOMDAYS RESERVED — HONORARY MOTHER'S DAY EDITION</p>
+    <p class="footer-copyright">ทำด้วยความรัก 🌸 สุขสันต์วันแม่</p>
   </div>
 </section>
 
@@ -404,12 +395,12 @@
     if (isPlaying) {
       audio.pause();
       audioIcon.textContent = '🌸';
-      audioStatus.textContent = 'เปิดเพลงบรรเลงวันแม่';
+      audioStatus.textContent = 'เปิดเพลงเบาๆ ฟังกัน';
       isPlaying = false;
     } else {
       audio.play().then(() => {
         audioIcon.textContent = '⏸️';
-        audioStatus.textContent = 'กำลังเล่นเพลงบรรเลง 🎶';
+        audioStatus.textContent = 'กำลังเล่นเพลงอยู่ 🎶';
         isPlaying = true;
       }).catch(err => {
         console.log('Audio playback error:', err);
@@ -423,7 +414,6 @@
     count++;
     document.getElementById('garlandNum').textContent = count;
 
-    // Create Petal & Flower Burst Animation
     for (let i = 0; i < 10; i++) {
       const flower = document.createElement('div');
       flower.textContent = ['💐', '🌸', '✨', '💛', '🤍'][Math.floor(Math.random() * 5)];
