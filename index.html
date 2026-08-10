@@ -22,17 +22,18 @@
 
 <style>
   :root {
-    --main-bg: #0d0407;
-    --card-bg: #1c0b12;
-    --card-bg-2: #2a111c;
-    --accent-gold: #ffcf96;
-    --accent-gold-deep: #e89b5f;
-    --accent-rose: #e27396;
+    --main-bg: #fffcf7;
+    --card-bg: #ffffff;
+    --card-bg-2: #faf4ed;
+    --accent-gold: #c29545;
+    --accent-gold-deep: #9e7529;
+    --accent-rose: #d85a7f;
     --accent-wine: #7c2d46;
-    --text-cream: #fdf6ec;
-    --text-ember: #c9b09a;
-    --text-smoke: rgba(253, 246, 236, 0.65);
-    --border-hair: rgba(255, 207, 150, 0.15);
+    --text-cream: #2c221e;
+    --text-ember: #8c6d58;
+    --text-smoke: #665750;
+    --border-hair: rgba(194, 149, 69, 0.22);
+    --shadow-warm: 0 16px 45px rgba(180, 140, 100, 0.12);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,7 +46,7 @@
     font-weight: 300;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .display { font-family: 'Kanit', sans-serif; }
@@ -53,19 +54,19 @@
   .handwriting { font-family: 'Sriracha', cursive; }
   .signature-font { font-family: 'Alex Brush', cursive; }
 
-  /* Background Ambient Glow */
+  /* Background Ambient Soft Glow */
   .glow {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    opacity: 0.25; transition: opacity 0.6s ease;
+    opacity: 0.85; transition: opacity 0.6s ease;
     background:
-      radial-gradient(40% 35% at 50% 25%, rgba(255, 207, 150, 0.18), transparent 70%),
-      radial-gradient(50% 45% at 80% 85%, rgba(226, 115, 150, 0.14), transparent 65%),
-      radial-gradient(45% 40% at 15% 75%, rgba(124, 45, 70, 0.22), transparent 65%);
+      radial-gradient(45% 40% at 50% 20%, rgba(255, 230, 195, 0.6), transparent 75%),
+      radial-gradient(55% 50% at 85% 85%, rgba(255, 210, 225, 0.5), transparent 70%),
+      radial-gradient(45% 40% at 15% 75%, rgba(244, 225, 200, 0.6), transparent 70%);
   }
 
-  /* Subtle Film Grain Noise */
+  /* Subtle Noise Texture */
   .grain {
-    position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: 0.04; mix-blend-mode: overlay;
+    position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: 0.03; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -78,9 +79,9 @@
 
   .petal {
     position: absolute; top: -5%;
-    width: 12px; height: 16px; border-radius: 70% 10% 70% 10%;
-    background: linear-gradient(135deg, #fff7eb 0%, #f7d6e0 45%, var(--accent-rose) 100%);
-    box-shadow: 0 0 10px rgba(255, 207, 150, 0.25);
+    width: 13px; height: 17px; border-radius: 70% 10% 70% 10%;
+    background: linear-gradient(135deg, #ffffff 0%, #ffe3ec 50%, var(--accent-rose) 100%);
+    box-shadow: 0 2px 8px rgba(216, 90, 127, 0.2);
     opacity: 0; animation-name: fall, sway;
     animation-timing-function: linear, ease-in-out;
     animation-iteration-count: infinite, infinite;
@@ -88,8 +89,8 @@
 
   @keyframes fall {
     0% { opacity: 0; transform: translateY(0) rotate(0deg); }
-    10% { opacity: 0.7; }
-    90% { opacity: 0.5; }
+    10% { opacity: 0.85; }
+    90% { opacity: 0.65; }
     100% { opacity: 0; transform: translateY(110vh) rotate(240deg); }
   }
 
@@ -102,29 +103,29 @@
   .audio-player {
     position: fixed; top: 20px; right: 20px; z-index: 100;
     display: flex; align-items: center; gap: 10px;
-    background: rgba(28, 11, 18, 0.75);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-hair);
-    padding: 8px 16px; border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 8px 18px; border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(180, 140, 100, 0.15);
     transition: all 0.3s ease;
   }
 
   .audio-player:hover {
-    background: rgba(42, 17, 28, 0.9);
-    border-color: rgba(255, 207, 150, 0.35);
+    background: #ffffff;
+    border-color: rgba(194, 149, 69, 0.4);
+    box-shadow: 0 10px 30px rgba(194, 149, 69, 0.2);
   }
 
   .music-btn {
-    background: none; border: none; color: var(--accent-gold);
+    background: rgba(194, 149, 69, 0.12); border: none; color: var(--accent-gold-deep);
     font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px; border-radius: 50%;
-    background: rgba(255, 207, 150, 0.12);
+    width: 34px; height: 34px; border-radius: 50%;
     transition: transform 0.2s ease;
   }
 
   .music-btn:hover { transform: scale(1.1); }
-  .music-text { font-size: 12px; letter-spacing: 0.08em; color: var(--text-ember); }
+  .music-text { font-size: 13px; font-weight: 400; letter-spacing: 0.05em; color: var(--text-ember); }
 
   /* HERO SECTION */
   .hero-wrap { height: 200vh; position: relative; background: var(--main-bg); }
@@ -136,9 +137,9 @@
   }
 
   .candle-flame {
-    position: absolute; left: 50%; top: 35%; width: 8px; height: 8px; margin: -4px 0 0 -4px;
+    position: absolute; left: 50%; top: 35%; width: 10px; height: 10px; margin: -5px 0 0 -5px;
     border-radius: 50%; background: var(--accent-gold); z-index: 0;
-    box-shadow: 0 0 24px 8px rgba(255, 207, 150, 0.95);
+    box-shadow: 0 0 30px 12px rgba(244, 190, 115, 0.85);
     animation: flame-flicker 2.2s ease-in-out infinite;
   }
 
@@ -150,13 +151,13 @@
 
   .photo-card-frame {
     position: relative; z-index: 1;
-    width: min(320px, 80vw);
-    border-radius: 8px;
-    background: linear-gradient(150deg, var(--card-bg), var(--card-bg-2) 60%, var(--accent-wine));
-    padding: 12px 12px 36px;
+    width: min(330px, 82vw);
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 14px 14px 38px;
     box-shadow:
-      0 35px 80px rgba(0,0,0,0.8),
-      0 0 40px rgba(226, 115, 150, 0.2),
+      0 30px 70px rgba(180, 140, 100, 0.2),
+      0 0 30px rgba(216, 90, 127, 0.12),
       0 0 0 1px var(--border-hair);
     opacity: 0;
     will-change: opacity, filter, transform;
@@ -164,22 +165,22 @@
   }
 
   .photo-card-frame img {
-    display: block; width: 100%; height: 260px; object-fit: cover; border-radius: 4px;
-    filter: brightness(0.92) contrast(1.05);
+    display: block; width: 100%; height: 260px; object-fit: cover; border-radius: 6px;
+    filter: brightness(0.97) contrast(1.02);
   }
 
   .photo-caption {
     display: block; text-align: center; margin-top: 14px;
-    font-size: 13px; letter-spacing: 0.15em; color: var(--text-smoke);
+    font-size: 14px; letter-spacing: 0.12em; color: var(--text-smoke);
   }
-  .photo-caption b { color: var(--accent-gold); font-weight: 400; }
+  .photo-caption b { color: var(--accent-gold-deep); font-weight: 500; }
 
   .scroll-hint {
     font-size: 13px; letter-spacing: 0.1em; color: var(--text-smoke);
     transition: opacity 0.4s ease; position: relative; z-index: 1; margin-top: 10px;
   }
   .scroll-hint .arrow {
-    display: block; margin-top: 6px; font-size: 16px; color: var(--accent-gold);
+    display: block; margin-top: 6px; font-size: 16px; color: var(--accent-gold-deep);
     animation: bounce 1.8s ease-in-out infinite;
   }
 
@@ -201,31 +202,30 @@
   [data-reveal-el].in-view { opacity: 1; transform: translateY(0); }
 
   .eyebrow {
-    font-size: 12px; letter-spacing: 0.35em; color: var(--accent-gold); text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.32em; color: var(--accent-gold-deep); text-transform: uppercase; font-weight: 500;
   }
 
   .main-title {
-    font-size: clamp(34px, 7.5vw, 68px); font-weight: 700; line-height: 1.15;
+    font-size: clamp(34px, 7.5vw, 68px); font-weight: 700; line-height: 1.15; color: var(--text-cream);
   }
   .main-title .accent {
     display: block; font-family: 'Sriracha', cursive; color: var(--accent-rose);
-    text-shadow: 0 0 25px rgba(226, 115, 150, 0.4);
+    text-shadow: 0 2px 15px rgba(216, 90, 127, 0.2);
     font-size: clamp(30px, 6.5vw, 54px); font-weight: 400; margin-top: 10px;
   }
 
   .divider-rule {
-    width: 60px; height: 1px;
+    width: 70px; height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-    opacity: 0.7; margin: 10px 0;
+    opacity: 0.75; margin: 10px 0;
   }
 
   .letter-box {
-    background: rgba(28, 11, 18, 0.65);
+    background: #ffffff;
     border: 1px solid var(--border-hair);
-    border-radius: 16px;
-    padding: 40px 32px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    padding: 42px 36px;
+    box-shadow: var(--shadow-warm);
     text-align: left; max-width: 680px; width: 100%;
   }
 
@@ -234,31 +234,33 @@
   }
   .letter-box p + p { margin-top: 22px; }
   .letter-box .highlight {
-    color: var(--accent-gold); font-family: 'Mitr', sans-serif; font-weight: 400;
+    color: var(--accent-gold-deep); font-family: 'Mitr', sans-serif; font-weight: 500;
   }
 
   /* PHOTO MEMORY CARDS GRID */
   .memory-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px; width: 100%; max-width: 760px; margin-top: 20px;
+    gap: 22px; width: 100%; max-width: 760px; margin-top: 20px;
   }
 
   .memory-card {
-    background: linear-gradient(145deg, var(--card-bg), var(--card-bg-2));
+    background: #ffffff;
     border: 1px solid var(--border-hair);
-    border-radius: 12px; padding: 16px; text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-radius: 14px; padding: 22px 18px; text-align: center;
+    box-shadow: var(--shadow-warm);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .memory-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(255, 207, 150, 0.4);
+    border-color: rgba(194, 149, 69, 0.45);
+    box-shadow: 0 20px 45px rgba(180, 140, 100, 0.18);
   }
 
   .memory-icon {
-    font-size: 32px; margin-bottom: 12px; display: inline-block;
+    font-size: 34px; margin-bottom: 12px; display: inline-block;
   }
   .memory-title {
-    font-size: 18px; font-weight: 500; color: var(--accent-gold); margin-bottom: 8px;
+    font-size: 19px; font-weight: 500; color: var(--accent-gold-deep); margin-bottom: 8px;
   }
   .memory-desc {
     font-size: 14px; color: var(--text-smoke); line-height: 1.6;
@@ -266,23 +268,23 @@
 
   /* INTERACTIVE LOVE BUTTON SECTION */
   .interactive-box {
-    margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+    margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px;
   }
 
   .love-btn {
     background: linear-gradient(135deg, var(--accent-rose), var(--accent-wine));
-    color: var(--text-cream); border: none; padding: 16px 36px;
-    font-family: 'Kanit', sans-serif; font-size: 18px; font-weight: 500;
+    color: #ffffff; border: none; padding: 18px 40px;
+    font-family: 'Kanit', sans-serif; font-size: 19px; font-weight: 500;
     border-radius: 50px; cursor: pointer;
-    box-shadow: 0 10px 30px rgba(226, 115, 150, 0.4);
+    box-shadow: 0 10px 30px rgba(216, 90, 127, 0.35);
     transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;
   }
   .love-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(226, 115, 150, 0.6);
+    box-shadow: 0 15px 40px rgba(216, 90, 127, 0.5);
   }
   .love-counter {
-    font-size: 14px; color: var(--text-ember); letter-spacing: 0.05em;
+    font-size: 14px; color: var(--text-ember); letter-spacing: 0.05em; font-weight: 400;
   }
 
   /* SIGNATURE & FOOTER */
@@ -292,20 +294,20 @@
   }
 
   .from-tag {
-    font-family: 'Sriracha', cursive; font-size: 20px; color: var(--text-ember);
+    font-family: 'Sriracha', cursive; font-size: 22px; color: var(--text-ember);
   }
   .signature-text {
     font-family: 'Alex Brush', cursive; font-size: clamp(72px, 16vw, 130px);
-    color: var(--text-cream); margin-top: 4px; line-height: 1;
-    text-shadow: 0 0 20px rgba(255, 207, 150, 0.3);
+    color: var(--accent-wine); margin-top: 4px; line-height: 1;
+    text-shadow: 0 4px 20px rgba(216, 90, 127, 0.2);
   }
   .footer-copyright {
-    margin-top: 40px; font-size: 12px; letter-spacing: 0.15em; color: rgba(253, 246, 236, 0.35);
+    margin-top: 40px; font-size: 12px; letter-spacing: 0.15em; color: var(--text-smoke); opacity: 0.8;
   }
 
   @media (max-width: 600px) {
-    .letter-box { padding: 28px 20px; }
-    .audio-player { top: 14px; right: 14px; padding: 6px 12px; }
+    .letter-box { padding: 30px 22px; }
+    .audio-player { top: 14px; right: 14px; padding: 6px 14px; }
     .music-text { display: none; }
   }
 </style>
@@ -319,7 +321,7 @@
 <!-- Background Audio Player -->
 <div class="audio-player">
   <button class="music-btn" id="musicBtn" onclick="toggleAudio()" aria-label="Play Music">
-    <span id="musicIcon">🎵</span>
+    <span id="musicIcon">🌸</span>
   </button>
   <span class="music-text" id="musicStatus">เปิดเพลงสร้างบรรยากาศ</span>
 </div>
@@ -408,7 +410,7 @@
     <button class="love-btn" id="loveBtn" onclick="sendLove()">
       <span>💖</span> กดส่งความรักให้คุณแม่
     </button>
-    <div class="love-counter" id="loveCounter">ส่งหัวใจแล้ว <span id="countNum">0</span> ดวง</div>
+    <div class="love-counter" id="loveCounter">ส่งหัวใจแล้ว <span id="countNum" style="color: var(--accent-wine); font-weight: 600;">0</span> ดวง</div>
   </div>
 </section>
 
@@ -433,8 +435,8 @@
     petal.style.left = `${Math.random() * 100}%`;
     petal.style.animationDuration = `${8 + Math.random() * 10}s, ${3 + Math.random() * 4}s`;
     petal.style.animationDelay = `${Math.random() * 8}s, ${Math.random() * 2}s`;
-    petal.style.width = `${8 + Math.random() * 8}px`;
-    petal.style.height = `${12 + Math.random() * 8}px`;
+    petal.style.width = `${9 + Math.random() * 8}px`;
+    petal.style.height = `${13 + Math.random() * 8}px`;
     petalsContainer.appendChild(petal);
   }
 
@@ -458,7 +460,7 @@
     scrollHint.style.opacity = Math.max(0, 1 - progress * 2);
 
     // Flame & Glow intensity
-    glowLayer.style.opacity = 0.25 + progress * 0.35;
+    glowLayer.style.opacity = 0.85 + progress * 0.15;
     candleFlame.style.transform = `scale(${1 + progress * 0.8})`;
   });
 
@@ -483,7 +485,7 @@
   function toggleAudio() {
     if (isPlaying) {
       audio.pause();
-      musicIcon.textContent = '🎵';
+      musicIcon.textContent = '🌸';
       musicStatus.textContent = 'เปิดเพลง';
       isPlaying = false;
     } else {
