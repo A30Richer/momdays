@@ -32,7 +32,7 @@
     --rose-accent: #8b263e;
     --jasmine-white: #ffffff;
     --border-gold: rgba(194, 149, 69, 0.28);
-    --shadow-soft: 0 12px 35px rgba(44, 36, 32, 0.07);
+    --shadow-soft: 0 16px 45px rgba(44, 36, 32, 0.08);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -114,17 +114,18 @@
   .audio-btn:hover { transform: scale(1.08); }
   .audio-label { font-size: 13px; font-weight: 400; color: var(--text-secondary); letter-spacing: 0.05em; }
 
+  /* FORMAL HERO SECTION - EXTENDED SPACING */
   .hero-wrap {
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 100px 24px 60px; position: relative;
+    text-align: center; padding: 140px 24px 100px; position: relative;
   }
 
   .jasmine-emblem {
-    width: 80px; height: 80px; margin-bottom: 24px;
+    width: 84px; height: 84px; margin-bottom: 26px;
     background: var(--bg-card); border: 2px solid var(--border-gold);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 38px; box-shadow: 0 10px 30px var(--gold-soft);
+    font-size: 40px; box-shadow: 0 10px 30px var(--gold-soft);
     animation: emblem-glow 3s ease-in-out infinite alternate;
   }
 
@@ -134,21 +135,21 @@
   }
 
   .eyebrow-formal {
-    font-size: 13px; letter-spacing: 0.3em; color: var(--gold-dark);
-    text-transform: uppercase; font-weight: 500; margin-bottom: 12px;
+    font-size: 13px; letter-spacing: 0.32em; color: var(--gold-dark);
+    text-transform: uppercase; font-weight: 500; margin-bottom: 14px;
   }
 
   .hero-title {
-    font-family: 'Charm', cursive; font-size: clamp(38px, 8vw, 76px);
+    font-family: 'Charm', cursive; font-size: clamp(40px, 8.5vw, 80px);
     font-weight: 700; color: var(--text-primary); line-height: 1.2;
   }
   .hero-subtitle {
     font-size: clamp(18px, 3vw, 26px); font-weight: 400;
-    color: var(--rose-accent); margin-top: 10px; letter-spacing: 0.05em;
+    color: var(--rose-accent); margin-top: 12px; letter-spacing: 0.05em;
   }
 
   .gold-divider {
-    display: flex; align-items: center; gap: 16px; margin: 24px 0; width: 100%; max-width: 240px;
+    display: flex; align-items: center; gap: 16px; margin: 28px 0; width: 100%; max-width: 260px;
   }
   .gold-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent); }
   .gold-diamond { font-size: 12px; color: var(--gold-primary); }
@@ -156,10 +157,10 @@
   .scroll-card {
     background: var(--bg-card);
     border: 1px solid var(--border-gold);
-    border-radius: 20px;
-    padding: 48px 36px;
+    border-radius: 24px;
+    padding: 52px 40px;
     box-shadow: var(--shadow-soft);
-    max-width: 720px; width: 100%; margin: 30px auto;
+    max-width: 740px; width: 100%; margin: 40px auto;
     position: relative; overflow: hidden;
   }
 
@@ -180,77 +181,99 @@
   .poem-box {
     background: var(--bg-accent);
     border-left: 3px solid var(--gold-primary);
-    padding: 30px 24px; margin: 32px 0; border-radius: 0 12px 12px 0;
+    padding: 32px 26px; margin: 36px 0; border-radius: 0 14px 14px 0;
     text-align: center;
   }
 
   .poem-text {
-    font-family: 'Sriracha', cursive; font-size: clamp(18px, 2.6vw, 23px);
-    color: var(--rose-accent); line-height: 2.2;
+    font-family: 'Sriracha', cursive; font-size: clamp(19px, 2.7vw, 24px);
+    color: var(--rose-accent); line-height: 2.3;
+  }
+
+  /* SUSPENSE GAP SPACERS */
+  .suspense-gap-formal {
+    height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; pointer-events: none; text-align: center;
+  }
+  .suspense-text-formal {
+    font-family: 'Charm', cursive; font-size: clamp(20px, 3vw, 28px);
+    color: var(--gold-dark); opacity: 0.8; letter-spacing: 0.05em; font-weight: 700;
+  }
+
+  /* HONORARY FEATURE GRID - EXTENDED SPACING */
+  .feature-section {
+    padding: 160px 24px; max-width: 820px; margin: 0 auto; text-align: center; min-height: 130vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
   }
 
   .feature-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px; width: 100%; max-width: 760px; margin: 40px auto 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px; width: 100%; max-width: 780px; margin: 44px auto 0;
   }
 
   .feature-item {
     background: var(--bg-card); border: 1px solid var(--border-gold);
-    border-radius: 14px; padding: 24px 20px; text-align: center;
-    box-shadow: var(--shadow-soft); transition: all 0.3s ease;
+    border-radius: 16px; padding: 28px 22px; text-align: center;
+    box-shadow: var(--shadow-soft); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(194, 149, 69, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(194, 149, 69, 0.18);
   }
 
-  .feature-icon { font-size: 34px; margin-bottom: 12px; display: inline-block; }
-  .feature-title { font-size: 19px; font-weight: 500; color: var(--gold-dark); margin-bottom: 8px; }
-  .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .feature-icon { font-size: 38px; margin-bottom: 14px; display: inline-block; }
+  .feature-title { font-size: 20px; font-weight: 500; color: var(--gold-dark); margin-bottom: 10px; }
+  .feature-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 
   .interactive-garland {
-    margin: 45px 0 20px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+    margin: 50px 0 20px; display: flex; flex-direction: column; align-items: center; gap: 18px;
   }
 
   .garland-btn {
     background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-    color: #ffffff; border: none; padding: 18px 42px;
-    font-family: 'Kanit', sans-serif; font-size: 19px; font-weight: 500;
+    color: #ffffff; border: none; padding: 20px 46px;
+    font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 500;
     border-radius: 50px; cursor: pointer;
-    box-shadow: 0 10px 30px rgba(194, 149, 69, 0.35);
-    transition: all 0.3s ease; display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 12px 35px rgba(194, 149, 69, 0.38);
+    transition: all 0.3s ease; display: flex; align-items: center; gap: 14px;
   }
   .garland-btn:hover {
     transform: scale(1.04);
-    box-shadow: 0 14px 40px rgba(194, 149, 69, 0.5);
+    box-shadow: 0 16px 45px rgba(194, 149, 69, 0.55);
   }
 
   .garland-count {
-    font-size: 14px; color: var(--text-secondary); letter-spacing: 0.05em;
+    font-size: 15px; color: var(--text-secondary); letter-spacing: 0.05em;
   }
 
+  /* SIGNATURE & CLOSING */
   .closing-wrap {
-    padding: 80px 24px 100px; text-align: center;
+    padding: 160px 24px 140px; text-align: center; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
   }
   .formal-salutation {
-    font-family: 'Sriracha', cursive; font-size: 22px; color: var(--gold-dark);
+    font-family: 'Sriracha', cursive; font-size: 24px; color: var(--gold-dark);
   }
   .formal-signature {
-    font-family: 'Charm', cursive; font-size: clamp(48px, 10vw, 84px);
-    color: var(--text-primary); margin-top: 8px; font-weight: 700;
+    font-family: 'Charm', cursive; font-size: clamp(52px, 11vw, 90px);
+    color: var(--text-primary); margin-top: 10px; font-weight: 700;
   }
   .footer-copyright {
-    margin-top: 45px; font-size: 12px; letter-spacing: 0.15em; color: var(--text-secondary); opacity: 0.7;
+    margin-top: 50px; font-size: 13px; letter-spacing: 0.15em; color: var(--text-secondary); opacity: 0.7;
   }
 
   [data-reveal-el] {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    opacity: 0; transform: translateY(50px) scale(0.96); filter: blur(4px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
   }
-  [data-reveal-el].in-view { opacity: 1; transform: translateY(0); }
+  [data-reveal-el].in-view { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 
   @media (max-width: 600px) {
-    .scroll-card { padding: 32px 20px; }
+    .scroll-card { padding: 36px 22px; }
+    .hero-wrap { padding: 100px 20px 80px; }
+    .feature-section { padding: 110px 20px; }
+    .closing-wrap { padding: 110px 20px 100px; }
+    .suspense-gap-formal { height: 30vh; }
     .audio-control { top: 14px; right: 14px; padding: 6px 14px; }
     .audio-label { display: none; }
   }
@@ -266,19 +289,19 @@
   <button class="audio-btn" id="audioBtn" onclick="toggleAudio()" aria-label="Play Music">
     <span id="audioIcon">🌸</span>
   </button>
-  <span class="audio-label" id="audioStatus">เปิดเพลงเบาๆ ฟังกัน</span>
+  <span class="audio-label" id="audioStatus">เปิดเพลงบรรเลงวันแม่</span>
 </div>
 
 <audio id="bgMusic" loop preload="auto">
   <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8716b3f.mp3?filename=gentle-piano-10708.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION: Formal Tribute -->
 <div class="hero-wrap">
   <div class="jasmine-emblem">🌸</div>
-  <p class="eyebrow-formal">12 สิงหาคม • วันแม่แห่งชาติ</p>
-  <h1 class="hero-title">สุขสันต์วันแม่นะแม่</h1>
-  <h2 class="hero-subtitle">ขอบคุณที่เป็นแม่ของหนู/ผมนะ 💛</h2>
+  <p class="eyebrow-formal">12 AUGUST — MOTHER'S DAY TRIBUTE</p>
+  <h1 class="hero-title">สารเนื่องในวันแม่แห่งชาติ</h1>
+  <h2 class="hero-subtitle">กิตติกรรมประกาศและบทคารวะอันทรงเกียรติแด่คุณแม่</h2>
 
   <div class="gold-divider">
     <div class="gold-line"></div>
@@ -288,7 +311,7 @@
 
   <div class="scroll-card" data-reveal-el>
     <p>
-      วันนี้อยากหยุดสักครู่แล้วบอกแม่ตรงๆ ว่า<span class="highlight-gold">รักแม่มากแค่ไหน</span> บางทีเราก็ไม่ค่อยได้พูดคำนี้กันบ่อยๆ ในชีวิตประจำวัน แต่จริงๆ แล้วมันอยู่ในใจตลอดเวลา
+      เนื่องในโอกาสอันเป็นมงคลยิ่งแห่ง <span class="highlight-gold">วันแม่แห่งชาติ</span> ขอนอบน้อมคารวะและแสดงความซาบซึ้งในพระคุณอันยิ่งใหญ่ของคุณแม่ ผู้เป็นประธานแห่งความรัก ความเมตตา และเป็นเสาหลักอันมั่นคงของครอบครัวเสมอมา
     </p>
 
     <div class="poem-box">
@@ -301,59 +324,69 @@
     </div>
 
     <p>
-      ขอบคุณที่คอยอยู่เคียงข้างมาตลอด ไม่ว่าจะเรื่องเล็กเรื่องใหญ่ ขอบคุณที่เข้าใจ ที่ให้อภัย และที่รักเราแบบไม่มีเงื่อนไข ถ้าไม่มีแม่ วันนี้หนู/ผมคงไม่เป็นแบบนี้
+      ไม่มีความรักใดในโลกนี้ที่จะบริสุทธิ์และยิ่งใหญ่ไปกว่าความรักของคุณแม่ ทุกความเสียสละ คำสั่งสอน และความอารีที่คุณแม่มอบให้ เป็นรากฐานอันสำคัญยิ่งที่นำทางให้พวกเราเติบโตอย่างมั่นคงและมีความสุข
     </p>
     <p>
-      ขอให้แม่มีความสุขมากๆ นะ สุขภาพแข็งแรง ไม่เจ็บไม่ป่วย แล้วก็อยากให้แม่รู้ไว้ว่าไม่ว่ายังไงก็มีหนู/ผมอยู่ตรงนี้เสมอ 💐
+      ในโอกาสนี้ ขอกราบอาราธนาคุณพระศรีรัตนตรัยและสิ่งศักดิ์สิทธิ์ทั้งหลาย ได้โปรดดลบันดาลประทานพรให้คุณแม่ประสบแต่ความสุข ความเจริญ มีสุขภาพพลานามัยที่แข็งแรง สมบูรณ์ ปราศจากโรคภัยไข้เจ็บ และมีความสุขตราบกาลนาน 💐
     </p>
   </div>
 </div>
 
-<!-- SECTION 2 -->
-<section style="padding: 40px 24px; max-width: 800px; margin: 0 auto; text-align: center;">
+<!-- SUSPENSE GAP FORMAL -->
+<div class="suspense-gap-formal" data-reveal-el>
+  <div class="suspense-text-formal">🌸 นอบน้อมกตัญญุตา ด้วยหัวใจอันบริสุทธิ์...</div>
+</div>
+
+<!-- SECTION 2: 3 Pillars of Gratitude -->
+<section class="feature-section">
   <div data-reveal-el>
-    <p class="eyebrow-formal">สิ่งที่แม่ให้เรามาตลอด</p>
-    <h2 class="display" style="font-size: clamp(26px, 4.5vw, 40px); color: var(--text-primary);">
-      สามอย่างที่ลืมไม่ลง
+    <p class="eyebrow-formal">THE VALUE OF MATERNAL LOVE</p>
+    <h2 class="display" style="font-size: clamp(28px, 5vw, 44px); color: var(--text-primary);">
+      คุณค่าอันหาที่สุดมิได้
     </h2>
   </div>
 
   <div class="feature-grid" data-reveal-el>
     <div class="feature-item">
       <span class="feature-icon">💐</span>
-      <h3 class="feature-title">ความรักที่ไม่มีวันหมด</h3>
-      <p class="feature-desc">ไม่ว่าจะทำอะไรผิดพลาดแค่ไหน แม่ก็ยังรักและให้อภัยเสมอ</p>
+      <h3 class="feature-title">ดอกมะลิแทนใจ</h3>
+      <p class="feature-desc">สัญลักษณ์แห่งความบริสุทธิ์ ส่งกลิ่นหอมเย็นบริสุทธิ์ดุจความรักของคุณแม่</p>
     </div>
 
     <div class="feature-item">
       <span class="feature-icon">🛡️</span>
-      <h3 class="feature-title">ที่พึ่งเวลาเหนื่อย</h3>
-      <p class="feature-desc">ทุกครั้งที่ท้อ กลับบ้านไปหาแม่แล้วรู้สึกดีขึ้นเสมอ</p>
+      <h3 class="feature-title">เกราะปกป้องอันอบอุ่น</h3>
+      <p class="feature-desc">คอยดูแลและโอบอุ้มด้วยความรัก ความอดทน ในทุกช่วงเวลาของชีวิต</p>
     </div>
 
     <div class="feature-item">
       <span class="feature-icon">🕯️</span>
-      <h3 class="feature-title">แบบอย่างที่ดี</h3>
-      <p class="feature-desc">สอนให้เรารู้ว่าอะไรถูกอะไรผิด และเป็นคนที่ดีขึ้นทุกวัน</p>
+      <h3 class="feature-title">ประทีปส่องนำทาง</h3>
+      <p class="feature-desc">คอยสั่งสอน ให้ข้อคิด และเป็นแบบอย่างที่ดีในการดำเนินชีวิตอย่างมีคุณค่า</p>
     </div>
   </div>
 
   <!-- Interactive Garland Offering -->
   <div class="interactive-garland" data-reveal-el>
     <button class="garland-btn" id="garlandBtn" onclick="offerGarland()">
-      <span>💐</span> กดส่งความรักให้แม่
+      <span>💐</span> กราบนอบน้อมมอบพวงมาลัยวันแม่
     </button>
-    <div class="garland-count" id="garlandCount">ส่งความรักไปแล้ว <span id="garlandNum" style="color: var(--gold-dark); font-weight: 600;">0</span> ครั้ง</div>
+    <div class="garland-count" id="garlandCount">ร่วมมอบพวงมาลัยแล้ว <span id="garlandNum" style="color: var(--gold-dark); font-weight: 600;">0</span> ครั้ง</div>
   </div>
 </section>
+
+<!-- SUSPENSE GAP FORMAL 2 -->
+<div class="suspense-gap-formal" data-reveal-el>
+  <div class="suspense-text-formal">✨ เทิดทูนพระคุณแม่ยิ่งใหญ่ ตราบกาลนาน...</div>
+</div>
 
 <!-- SECTION 3: Signature & Closing -->
 <section class="closing-wrap">
   <div data-reveal-el>
-    <p class="formal-salutation">รักแม่ที่สุดในโลกเลยนะ</p>
-    <h3 class="formal-signature">ลูกของแม่</h3>
+    <p class="formal-salutation">ด้วยความกตัญญูกตเวทิตาและเคารพรักอย่างสูงยิ่ง,</p>
+    <h3 class="formal-signature">ด้วยรักและเคารพคุณแม่</h3>
     <div style="width: 160px; height: 2px; margin: 24px auto 0; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);"></div>
-    <p class="footer-copyright">ทำด้วยความรัก 🌸 สุขสันต์วันแม่</p>
+    <p class="footer-copyright">MOMDAYS RESERVED — HONORARY MOTHER'S DAY EDITION</p>
   </div>
 </section>
 
@@ -373,7 +406,7 @@
     petalsContainer.appendChild(petal);
   }
 
-  // 2. Scroll Reveal Observer
+  // 2. Scroll Reveal Observer for Sections (Smooth Blur & Scale)
   const revealElements = document.querySelectorAll('[data-reveal-el]');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -381,7 +414,7 @@
         entry.target.classList.add('in-view');
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
 
   revealElements.forEach(el => observer.observe(el));
 
@@ -395,12 +428,12 @@
     if (isPlaying) {
       audio.pause();
       audioIcon.textContent = '🌸';
-      audioStatus.textContent = 'เปิดเพลงเบาๆ ฟังกัน';
+      audioStatus.textContent = 'เปิดเพลงบรรเลงวันแม่';
       isPlaying = false;
     } else {
       audio.play().then(() => {
         audioIcon.textContent = '⏸️';
-        audioStatus.textContent = 'กำลังเล่นเพลงอยู่ 🎶';
+        audioStatus.textContent = 'กำลังเล่นเพลงบรรเลง 🎶';
         isPlaying = true;
       }).catch(err => {
         console.log('Audio playback error:', err);
@@ -414,6 +447,7 @@
     count++;
     document.getElementById('garlandNum').textContent = count;
 
+    // Create Petal & Flower Burst Animation
     for (let i = 0; i < 10; i++) {
       const flower = document.createElement('div');
       flower.textContent = ['💐', '🌸', '✨', '💛', '🤍'][Math.floor(Math.random() * 5)];

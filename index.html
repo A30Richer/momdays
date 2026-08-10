@@ -33,7 +33,7 @@
     --text-ember: #8c6d58;
     --text-smoke: #665750;
     --border-hair: rgba(194, 149, 69, 0.22);
-    --shadow-warm: 0 16px 45px rgba(180, 140, 100, 0.12);
+    --shadow-warm: 0 18px 50px rgba(180, 140, 100, 0.14);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,7 +46,7 @@
     font-weight: 300;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   .display { font-family: 'Kanit', sans-serif; }
@@ -127,8 +127,8 @@
   .music-btn:hover { transform: scale(1.1); }
   .music-text { font-size: 13px; font-weight: 400; letter-spacing: 0.05em; color: var(--text-ember); }
 
-  /* HERO SECTION */
-  .hero-wrap { height: 200vh; position: relative; background: var(--main-bg); }
+  /* HERO SECTION: EXTENDED SCROLL FOR SUSPENSE */
+  .hero-wrap { height: 280vh; position: relative; background: var(--main-bg); }
   .hero {
     position: sticky; top: 0; height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -137,9 +137,9 @@
   }
 
   .candle-flame {
-    position: absolute; left: 50%; top: 35%; width: 10px; height: 10px; margin: -5px 0 0 -5px;
+    position: absolute; left: 50%; top: 35%; width: 12px; height: 12px; margin: -6px 0 0 -6px;
     border-radius: 50%; background: var(--accent-gold); z-index: 0;
-    box-shadow: 0 0 30px 12px rgba(244, 190, 115, 0.85);
+    box-shadow: 0 0 35px 14px rgba(244, 190, 115, 0.85);
     animation: flame-flicker 2.2s ease-in-out infinite;
   }
 
@@ -151,7 +151,7 @@
 
   .photo-card-frame {
     position: relative; z-index: 1;
-    width: min(330px, 82vw);
+    width: min(340px, 84vw);
     border-radius: 12px;
     background: #ffffff;
     padding: 14px 14px 38px;
@@ -161,11 +161,11 @@
       0 0 0 1px var(--border-hair);
     opacity: 0;
     will-change: opacity, filter, transform;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease;
   }
 
   .photo-card-frame img {
-    display: block; width: 100%; height: 260px; object-fit: cover; border-radius: 6px;
+    display: block; width: 100%; height: 270px; object-fit: cover; border-radius: 6px;
     filter: brightness(0.97) contrast(1.02);
   }
 
@@ -176,11 +176,11 @@
   .photo-caption b { color: var(--accent-gold-deep); font-weight: 500; }
 
   .scroll-hint {
-    font-size: 13px; letter-spacing: 0.1em; color: var(--text-smoke);
-    transition: opacity 0.4s ease; position: relative; z-index: 1; margin-top: 10px;
+    font-size: 13px; letter-spacing: 0.12em; color: var(--text-smoke);
+    transition: opacity 0.4s ease; position: relative; z-index: 1; margin-top: 14px;
   }
   .scroll-hint .arrow {
-    display: block; margin-top: 6px; font-size: 16px; color: var(--accent-gold-deep);
+    display: block; margin-top: 8px; font-size: 18px; color: var(--accent-gold-deep);
     animation: bounce 1.8s ease-in-out infinite;
   }
 
@@ -189,124 +189,136 @@
     50% { transform: translateY(8px); }
   }
 
-  /* REVEAL CONTENT SECTIONS */
+  /* REVEAL CONTENT SECTIONS: EXTENDED DISTANCE & SUSPENSE */
   .reveal-section {
-    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 90px 24px; gap: 24px; max-width: 800px; margin: 0 auto;
+    min-height: 140vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 180px 24px; gap: 32px; max-width: 820px; margin: 0 auto;
+  }
+
+  /* SUSPENSE GAP SPACERS */
+  .suspense-gap {
+    height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; pointer-events: none;
+  }
+  .suspense-text {
+    font-family: 'Sriracha', cursive; font-size: clamp(16px, 2.5vw, 21px);
+    color: var(--accent-gold-deep); opacity: 0.75; letter-spacing: 0.08em;
   }
 
   [data-reveal-el] {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    opacity: 0; transform: translateY(55px) scale(0.96); filter: blur(4px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
   }
-  [data-reveal-el].in-view { opacity: 1; transform: translateY(0); }
+  [data-reveal-el].in-view { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 
   .eyebrow {
-    font-size: 13px; letter-spacing: 0.32em; color: var(--accent-gold-deep); text-transform: uppercase; font-weight: 500;
+    font-size: 13px; letter-spacing: 0.35em; color: var(--accent-gold-deep); text-transform: uppercase; font-weight: 500;
   }
 
   .main-title {
-    font-size: clamp(34px, 7.5vw, 68px); font-weight: 700; line-height: 1.15; color: var(--text-cream);
+    font-size: clamp(36px, 8vw, 72px); font-weight: 700; line-height: 1.15; color: var(--text-cream);
   }
   .main-title .accent {
     display: block; font-family: 'Sriracha', cursive; color: var(--accent-rose);
     text-shadow: 0 2px 15px rgba(216, 90, 127, 0.2);
-    font-size: clamp(30px, 6.5vw, 54px); font-weight: 400; margin-top: 10px;
+    font-size: clamp(32px, 7vw, 58px); font-weight: 400; margin-top: 12px;
   }
 
   .divider-rule {
-    width: 70px; height: 2px;
+    width: 80px; height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-    opacity: 0.75; margin: 10px 0;
+    opacity: 0.8; margin: 16px 0;
   }
 
   .letter-box {
     background: #ffffff;
     border: 1px solid var(--border-hair);
-    border-radius: 20px;
-    padding: 42px 36px;
+    border-radius: 24px;
+    padding: 48px 40px;
     box-shadow: var(--shadow-warm);
-    text-align: left; max-width: 680px; width: 100%;
+    text-align: left; max-width: 700px; width: 100%;
   }
 
   .letter-box p {
-    font-size: clamp(16px, 2.2vw, 19px); font-weight: 300; line-height: 2.0; color: var(--text-cream);
+    font-size: clamp(17px, 2.3vw, 20px); font-weight: 300; line-height: 2.1; color: var(--text-cream);
   }
-  .letter-box p + p { margin-top: 22px; }
+  .letter-box p + p { margin-top: 24px; }
   .letter-box .highlight {
     color: var(--accent-gold-deep); font-family: 'Mitr', sans-serif; font-weight: 500;
   }
 
   /* PHOTO MEMORY CARDS GRID */
   .memory-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px; width: 100%; max-width: 760px; margin-top: 20px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px; width: 100%; max-width: 780px; margin-top: 24px;
   }
 
   .memory-card {
     background: #ffffff;
     border: 1px solid var(--border-hair);
-    border-radius: 14px; padding: 22px 18px; text-align: center;
+    border-radius: 16px; padding: 26px 20px; text-align: center;
     box-shadow: var(--shadow-warm);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
   }
   .memory-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     border-color: rgba(194, 149, 69, 0.45);
-    box-shadow: 0 20px 45px rgba(180, 140, 100, 0.18);
+    box-shadow: 0 22px 50px rgba(180, 140, 100, 0.2);
   }
 
   .memory-icon {
-    font-size: 34px; margin-bottom: 12px; display: inline-block;
+    font-size: 38px; margin-bottom: 14px; display: inline-block;
   }
   .memory-title {
-    font-size: 19px; font-weight: 500; color: var(--accent-gold-deep); margin-bottom: 8px;
+    font-size: 20px; font-weight: 500; color: var(--accent-gold-deep); margin-bottom: 10px;
   }
   .memory-desc {
-    font-size: 14px; color: var(--text-smoke); line-height: 1.6;
+    font-size: 15px; color: var(--text-smoke); line-height: 1.75;
   }
 
   /* INTERACTIVE LOVE BUTTON SECTION */
   .interactive-box {
-    margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+    margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 18px;
   }
 
   .love-btn {
     background: linear-gradient(135deg, var(--accent-rose), var(--accent-wine));
-    color: #ffffff; border: none; padding: 18px 40px;
-    font-family: 'Kanit', sans-serif; font-size: 19px; font-weight: 500;
+    color: #ffffff; border: none; padding: 20px 44px;
+    font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 500;
     border-radius: 50px; cursor: pointer;
-    box-shadow: 0 10px 30px rgba(216, 90, 127, 0.35);
-    transition: all 0.3s ease; display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 12px 35px rgba(216, 90, 127, 0.38);
+    transition: all 0.3s ease; display: flex; align-items: center; gap: 12px;
   }
   .love-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(216, 90, 127, 0.5);
+    box-shadow: 0 18px 45px rgba(216, 90, 127, 0.55);
   }
   .love-counter {
-    font-size: 14px; color: var(--text-ember); letter-spacing: 0.05em; font-weight: 400;
+    font-size: 15px; color: var(--text-ember); letter-spacing: 0.05em; font-weight: 400;
   }
 
   /* SIGNATURE & FOOTER */
   .signature-wrap {
-    min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding-bottom: 80px;
+    min-height: 120vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding-bottom: 120px;
   }
 
   .from-tag {
-    font-family: 'Sriracha', cursive; font-size: 22px; color: var(--text-ember);
+    font-family: 'Sriracha', cursive; font-size: 24px; color: var(--text-ember);
   }
   .signature-text {
-    font-family: 'Alex Brush', cursive; font-size: clamp(72px, 16vw, 130px);
-    color: var(--accent-wine); margin-top: 4px; line-height: 1;
+    font-family: 'Alex Brush', cursive; font-size: clamp(76px, 17vw, 140px);
+    color: var(--accent-wine); margin-top: 6px; line-height: 1;
     text-shadow: 0 4px 20px rgba(216, 90, 127, 0.2);
   }
   .footer-copyright {
-    margin-top: 40px; font-size: 12px; letter-spacing: 0.15em; color: var(--text-smoke); opacity: 0.8;
+    margin-top: 50px; font-size: 13px; letter-spacing: 0.15em; color: var(--text-smoke); opacity: 0.8;
   }
 
   @media (max-width: 600px) {
-    .letter-box { padding: 30px 22px; }
+    .letter-box { padding: 32px 22px; }
+    .reveal-section { padding: 120px 20px; min-height: 120vh; }
+    .suspense-gap { height: 30vh; }
     .audio-player { top: 14px; right: 14px; padding: 6px 14px; }
     .music-text { display: none; }
   }
@@ -331,7 +343,7 @@
   <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-background-113289.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HERO SECTION: Light in the dark -->
+<!-- HERO SECTION: EXTENDED SCROLL FOR SUSPENSE -->
 <div class="hero-wrap" id="heroWrap">
   <section class="hero" id="hero">
     <div class="candle-flame" id="candleFlame"></div>
@@ -342,10 +354,15 @@
     </div>
 
     <div class="scroll-hint" id="scrollHint">
-      เลื่อนลงเพื่อเปิดอ่านเรื่องราวพิเศษ
+      ค่อยๆ เลื่อนลงเพื่อเปิดอ่านเรื่องราวพิเศษ
       <span class="arrow">↓</span>
     </div>
   </section>
+</div>
+
+<!-- SUSPENSE GAP 1 -->
+<div class="suspense-gap" data-reveal-el>
+  <div class="suspense-text">🌸 ค่อยๆ คลี่ความรู้สึกพิเศษที่อยากบอก...</div>
 </div>
 
 <!-- REVEAL 1: Main Gratitude Letter -->
@@ -376,11 +393,16 @@
   </div>
 </section>
 
+<!-- SUSPENSE GAP 2 -->
+<div class="suspense-gap" data-reveal-el>
+  <div class="suspense-text">✨ เพราะทุกความทรงจำมีค่าเสมอ...</div>
+</div>
+
 <!-- REVEAL 2: Memory & Gratitude Cards -->
 <section class="reveal-section">
   <div data-reveal-el>
     <p class="eyebrow">MOMENTS OF LOVE</p>
-    <h2 class="main-title" style="font-size: clamp(28px, 5vw, 44px);">
+    <h2 class="main-title" style="font-size: clamp(28px, 5.5vw, 48px);">
       3 สิ่งที่ไม่เคยลืมเลือน
     </h2>
   </div>
@@ -414,6 +436,11 @@
   </div>
 </section>
 
+<!-- SUSPENSE GAP 3 -->
+<div class="suspense-gap" data-reveal-el>
+  <div class="suspense-text">💐 ความรักของคุณแม่คือพรที่ยิ่งใหญ่ที่สุด...</div>
+</div>
+
 <!-- REVEAL 3: Signature & Closing -->
 <section class="signature-wrap">
   <div data-reveal-el>
@@ -427,7 +454,7 @@
 <script>
   // 1. Generate Floating Jasmine Petals
   const petalsContainer = document.getElementById('petals');
-  const PETAL_COUNT = 24;
+  const PETAL_COUNT = 26;
 
   for (let i = 0; i < PETAL_COUNT; i++) {
     const petal = document.createElement('div');
@@ -454,17 +481,17 @@
 
     // Photo reveal effect
     photoFrame.style.opacity = progress * 1.2;
-    photoFrame.style.transform = `scale(${0.85 + progress * 0.15}) translateY(${(1 - progress) * 20}px)`;
+    photoFrame.style.transform = `scale(${0.82 + progress * 0.18}) translateY(${(1 - progress) * 30}px)`;
 
     // Hide scroll hint gradually
-    scrollHint.style.opacity = Math.max(0, 1 - progress * 2);
+    scrollHint.style.opacity = Math.max(0, 1 - progress * 2.2);
 
     // Flame & Glow intensity
     glowLayer.style.opacity = 0.85 + progress * 0.15;
-    candleFlame.style.transform = `scale(${1 + progress * 0.8})`;
+    candleFlame.style.transform = `scale(${1 + progress * 1.1})`;
   });
 
-  // 3. Scroll Reveal Observer for Sections
+  // 3. Scroll Reveal Observer for Sections (Smooth Blur & Fade)
   const revealElements = document.querySelectorAll('[data-reveal-el]');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -472,7 +499,7 @@
         entry.target.classList.add('in-view');
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
 
   revealElements.forEach(el => observer.observe(el));
 
