@@ -318,15 +318,28 @@
       color:var(--ink);
     }
 
-    .blank-space{
-      height:200px;
-      border-top:1px dashed rgba(89,114,93,.22);
-      margin-top:46px;
-      padding-top:18px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(70,95,77,.46);
+    .letter-photo-wrap{
+      margin-top:40px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+
+    .letter-photo{
+      width:min(100%, 320px);
+      height:auto;
+      border-radius:20px;
+      background:#fff;
+      padding:8px;
+      box-shadow:0 16px 36px rgba(51,70,60,.14);
+      border:1px solid rgba(89,114,93,.15);
+      transition:transform .4s ease, box-shadow .4s ease;
+    }
+
+    .letter-photo:hover{
+      transform:translateY(-4px);
+      box-shadow:0 22px 42px rgba(51,70,60,.18);
     }
 
     @media (max-width:640px){
@@ -397,8 +410,8 @@
 
       <div class="signature">ด้วยรักเสมอ</div>
 
-      <div class="blank-space">
-        
+      <div class="letter-photo-wrap">
+        <img src="IMG_5989.jpeg" alt="ดอกมะลิวันแม่" class="letter-photo" loading="lazy">
       </div>
     </article>
   </section>
