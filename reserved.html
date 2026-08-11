@@ -349,43 +349,6 @@
 <body>
   <div class="noise"></div>
 
-  <section class="hero" aria-label="โปสการ์ดวันแม่" id="heroSection">
-    <div class="intro">
-      <p class="eyebrow">Mother's Day</p>
-      <h1>A postcard for Mom</h1>
-      <p class="hint">เลื่อนลงเพื่อเปิดการ์ด</p>
-    </div>
-
-    <div class="postcard-wrap" id="heroCard">
-      <div class="card-base">
-        <div class="card-inside" id="heroInside">
-          <span class="tiny">with love</span>
-          <h2>ถึงคุณแม่</h2>
-          <p>พื้นที่เล็ก ๆ สำหรับความรักที่มากเกินกว่าจะใส่ไว้ในโปสการ์ดใบเดียว</p>
-        </div>
-      </div>
-
-      <div class="card-cover" id="heroCover">
-        <div class="jasmine top-left" aria-hidden="true">
-          <i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="petal p5"></i>
-          <i class="center"></i><i class="leaf l1"></i><i class="leaf l2"></i>
-        </div>
-
-        <div class="cover-content">
-          <div>
-            <p class="cover-title">For Mom</p>
-            <p class="cover-sub">WITH ALL MY LOVE</p>
-          </div>
-        </div>
-
-        <div class="jasmine bottom-right" aria-hidden="true">
-          <i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="petal p5"></i>
-          <i class="center"></i><i class="leaf l1"></i><i class="leaf l2"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="scroll-track" id="openSection">
     <div class="sticky-stage">
       <div class="postcard-wrap">
@@ -444,35 +407,7 @@
   <script>
     const clamp = (n,min,max) => Math.min(Math.max(n,min),max);
 
-    // --- Hero card: subtle "ajar" peek as the user starts scrolling away from page 1 ---
-    const heroSection = document.getElementById('heroSection');
-    const heroCover = document.getElementById('heroCover');
-    const heroInside = document.getElementById('heroInside');
-
-    function updateHeroCard(){
-      const rect = heroSection.getBoundingClientRect();
-      const viewport = window.innerHeight;
-
-      // Progress 0 -> 1 as the hero section scrolls out of view.
-      // Finishes a bit before the section fully leaves, so it settles
-      // into its "ajar" pose rather than snapping at the edge.
-      const total = rect.height * 0.7;
-      const progress = clamp((-rect.top) / total, 0, 1);
-
-      // Quick, gentle ease — this is just a peek, not the full reveal.
-      const eased = 1 - Math.pow(1 - progress, 2);
-
-      // Only opens partway (ajar), unlike the full -165deg reveal below.
-      const angle = -26 * eased;
-      heroCover.style.transform = `rotateX(${angle}deg)`;
-      heroCover.style.boxShadow = `0 ${16 + 14*eased}px ${24 + 18*eased}px rgba(51,70,60,${0.10 + 0.08*eased})`;
-
-      const insideOpacity = clamp(0.15 + progress * 0.45, 0.15, 0.6);
-      heroInside.style.opacity = insideOpacity;
-      heroInside.style.transform = `translateY(${12 - 6*eased}px) scale(${.985 + .01*eased})`;
-    }
-
-    // --- Second card: full opening animation, sticky-scroll driven ---
+    // --- Postcard opening animation, sticky-scroll driven ---
     const section = document.getElementById('openSection');
     const cover = document.getElementById('cover');
     const inside = document.getElementById('inside');
@@ -499,7 +434,6 @@
     }
 
     function updateAll(){
-      updateHeroCard();
       updateCard();
     }
 
